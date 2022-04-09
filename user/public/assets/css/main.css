@@ -1,0 +1,296 @@
+/* Fonts */
+/* merriweather display font */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+/* poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/* temp font for all elements */
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+}
+
+h6 {
+  font-family: "Merriweather", serif;
+}
+
+span.topbar-text {
+  font-family: "Merriweather", serif;
+}
+
+span.sidebar-text {
+  font-family: "Merriweather", serif;
+}
+
+/* Topbar */
+.topbar-text {
+  color: #fff
+}
+
+/* App Layout */
+body {
+  overflow-y: overlay;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  width: 10px;
+  background-color: #f8f9fa00;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #b9b9b9; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #7e7e7e;
+}
+
+/* Sidebar Custom CSS */
+#sidebar {
+  position: fixed;
+  top: 45.19px;
+  left: -200px;
+  height: calc(100% - 44px);
+  width: 200px;
+  overflow-y: auto;
+  transition: 0.2s ease-in-out;
+  z-index: 500;
+}
+
+#sidebar-backdrop {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5));
+  z-index: 490;
+}
+
+#sidebar.toggled {
+  left: 0;
+}
+
+#sidebar .nav.nav-pills .nav-link:hover {
+  color: #fff !important;
+  background-color: #0d6dfda9 !important;
+}
+
+/* Topbar Custom CSS */
+
+.navbar-brand-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#topbar-nav .nav-item .nav-link:hover {
+  border-width: 3px !important;
+  border-bottom: 3px solid !important;
+  border-color: #fff !important;
+}
+
+#topbar-nav .nav-item .nav-link.active {
+  border-width: 3px !important;
+  border-bottom: 3px solid !important;
+  border-color: #fff !important;
+}
+
+#topbar-btn-text {
+  font-size: 1rem;
+}
+
+#topbar-dropdown-menu {
+  width: 280px;
+}
+
+/* Breadcrumbs Custom CSS */
+
+.breadcrumb { 
+  list-style: none; 
+  overflow: hidden; 
+  font: 0.85rem Helvetica, Arial, Sans-Serif;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 0;
+  z-index: -1; 
+}
+
+.breadcrumb li { 
+  float: left; 
+}
+
+.breadcrumb li a {
+  color: white;
+  text-decoration: none; 
+  padding: 0.5rem 0 0.5rem 2rem;
+  background: brown; /* fallback color */
+  background: hsla(34,85%,35%,1); 
+  position: relative; 
+  display: block;
+  float: left;
+}
+
+.breadcrumb li a:after { 
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  border-left: 15px solid hsla(34,85%,35%,1);
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 100%;
+  z-index: 2;
+}
+
+.breadcrumb li a:before { 
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  border-left: 15px solid #f8f9fa;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 1;
+}
+
+.breadcrumb li:first-child a {
+  padding-left: 10px;
+}
+
+.breadcrumb li:nth-child(2) a       { background:        hsla(34,85%,45%,1); }
+.breadcrumb li:nth-child(2) a:after { border-left-color: hsla(34,85%,45%,1); }
+.breadcrumb li:nth-child(3) a       { background:        hsla(34,85%,55%,1); }
+.breadcrumb li:nth-child(3) a:after { border-left-color: hsla(34,85%,55%,1); }
+.breadcrumb li:nth-child(4) a       { background:        hsla(34,85%,65%,1); }
+.breadcrumb li:nth-child(4) a:after { border-left-color: hsla(34,85%,65%,1); }
+.breadcrumb li:nth-child(5) a       { background:        hsla(34,85%,75%,1); }
+.breadcrumb li:nth-child(5) a:after { border-left-color: hsla(34,85%,75%,1); }
+.breadcrumb li:last-child a {
+  background: transparent !important;
+  color: black;
+  pointer-events: none;
+  cursor: default;
+}
+.breadcrumb li:last-child a:after { border: 0; }
+.breadcrumb li a:hover { background: hsla(34,85%,25%,1); }
+.breadcrumb li a:hover:after { border-left-color: hsla(34,85%,25%,1) !important; }
+
+/* Login Custom CSS */
+#login-container {
+  height: 100vh;
+}
+
+#sign-up-container {
+  height: 100vh;
+}
+
+.min-width-300 {
+  width: 300px;
+}
+
+.login-background {
+  height: 100vh;
+  width: 0;
+  object-fit: cover;
+  transition: 0.2s ease-in-out;
+}
+
+/* Home Custom CSS */
+.coin-container.card:hover {
+  background: linear-gradient(#c4c4c4e1,#f3f3f3e7);
+  transform: scale(1.01);
+  transition: 0.1s ease-in-out;
+}
+
+#nodata-alert {
+  border-left: #0d6efd !important;
+  border-width: 1rem !important;
+}
+
+.max-width-180 {
+  max-width: 180px;
+}
+
+/* Account Custom CSS */
+.profile-picture {
+  width: 80px;
+}
+
+/*  */
+#hero-home {
+  /* The image used */
+  background-image: linear-gradient(90deg, rgba(54, 54, 54, 0.5), rgba(59, 59, 59, 0.4)), url("http://numisworksauction.com/assets/images/1_2021NAPT.png");
+
+  /* Set a specific height */
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#services {
+  /* The image used */
+  background-image: linear-gradient(90deg, rgba(54, 54, 54, 0.5), rgba(59, 59, 59, 0.4)), url("http://numisworksauction.com/assets/images/1_2021NAPT.png");
+
+  /* Set a specific height */
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 320px) {
+  .navbar-brand-title {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  #topbar-btn-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .login-background {
+    width: 100%;
+    transition: 0.2s ease-in-out;
+  }
+}

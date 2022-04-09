@@ -1,0 +1,281 @@
+/* Fonts */
+/* merriweather display font */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+/* montserrat font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+/* temp font for all elements */
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+}
+
+h6 {
+  font-family: "Merriweather", serif;
+}
+
+textarea {
+  font-size: 0.85rem;
+}
+
+span.topbar-text {
+  font-family: "Merriweather", serif;
+}
+
+span.sidebar-text {
+  font-family: "Merriweather", serif;
+}
+
+/* App Layout */
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+#app {
+  position: relative;
+  top: 49px !important;
+  height: calc(100% - 109px);
+  transition: 0.2s ease-in-out;
+}
+
+/* Sidebar Custom CSS */
+#sidebar {
+  position: fixed;
+  top: 49px;
+  left: -210px;
+  height: calc(100% - 44px);
+  width: 210px;
+  overflow-y: auto;
+  transition: 0.2s ease-in-out;
+  z-index: 500;
+}
+
+#sidebar.toggled {
+  left: 0;
+}
+
+#sidebar .nav.nav-pills .nav-link:hover {
+  color: #fff !important;
+  background-color: #0d6dfda9 !important;
+}
+
+/* Topbar Custom CSS */
+
+.navbar-brand-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#topbar-nav .nav-item .nav-link:hover {
+  border-width: 3px !important;
+  border-bottom: 3px solid !important;
+  border-color: #0d6efd !important;
+  transition: 0.2s ease-in-out;
+}
+
+#topbar-nav .nav-item .nav-link.active {
+  border-width: 3px !important;
+  border-bottom: 3px solid !important;
+  border-color: #0d6efd !important;
+  transition: 0.2s ease-in-out;
+}
+
+#topbar-btn-text {
+  font-size: 1rem;
+}
+
+#topbar-dropdown-menu {
+  width: 280px;
+}
+
+/* Footer */
+#footer {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+}
+
+/* Login Custom CSS */
+#login-container {
+  position: relative;
+  height: 100%;
+}
+
+.login-background {
+  height: 100%;
+  width: 0;
+  object-fit: cover;
+  transition: 0.2s ease-in-out;
+}
+
+/* Upload File CSS */
+.drop-zone {
+  width: 165px;
+  height: 165px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #cccccc;
+  border: 1px dashed #3a3a3a;
+  border-radius: 10px;
+}
+
+.drop-zone--over {
+  border-style: solid;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+.drop-zone__thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #cccccc;
+  background-size: cover;
+  position: relative;
+}
+
+.drop-zone__thumb::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* Image Size in table */
+.table-image-thumb {
+  width: 50px;
+  height: 50px;
+}
+
+/* Modal images */
+.modal-img {
+  width: 150px;
+  height: 150px;
+}
+
+/* Custom textarea scrollbar */
+textarea textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+textarea textarea::-webkit-scrollbar-button {
+  display: none;
+}
+
+textarea textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+textarea textarea::-webkit-scrollbar-thumb {
+  background: #d2d2d2; 
+}
+
+@media only screen and (max-width: 320px) {
+  .navbar-brand-title {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  #topbar-btn-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #app {
+    position: relative;
+    left: 210px;
+    width: calc(100% - 210px);
+    transition: 0.2s ease-in-out;
+  }
+
+  #app.toggled {
+    position: relative;
+    left: 0px;
+    width: 100%;
+    transition: 0.2s ease-in-out;
+  }
+
+  #topbar.toggled {
+    position: fixed;
+    width: 100%;
+    left: 0px;
+  }
+
+  #sidebar.md-toggled {
+    left: -210px;
+  }
+
+  #sidebar-brand {
+    min-height: 49px !important;
+  }
+
+  #topbar {
+    position: fixed;
+    width: calc(100% - 210px);
+    left: 210px;
+  }
+
+  #sidebar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 210px;
+    overflow-y: auto;
+    transition: 0.2s ease-in-out;
+    z-index: 1030;
+  }
+
+  #sidebar-toggle {
+    font-size: 1.15em;
+  }
+
+  #footer.toggled {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #f5f5f5;
+  }
+
+  #footer {
+    position: absolute;
+    left: 210px;
+    bottom: 0;
+    width: calc(100% - 210px);
+    height: 60px;
+    line-height: 60px;
+    background-color: #f5f5f5;
+  }
+
+  .login-background {
+    width: 100%;
+    transition: 0.2s ease-in-out;
+  }
+}
